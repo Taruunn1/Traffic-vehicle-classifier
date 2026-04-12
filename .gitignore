@@ -1,0 +1,50 @@
+# Node modules (very large, should never be committed)
+node_modules/
+frontend/node_modules/
+
+# Frontend build output
+frontend/build/
+build/
+dist/
+
+# Python virtual environment
+.venv/
+venv/
+env/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Uploaded files (user data, not code)
+uploads/
+
+# Database files (runtime data)
+*.db
+
+# Model weights (large binary files)
+*.pt
+*.pth
+*.onnx
+*.weights
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE / Editor
+.vscode/
+.idea/
+*.swp
+
+# Logs
+*.log
+
+# Environment variables
+.env

@@ -1,0 +1,210 @@
+/* ========================================
+   CLASSES LIST COMPONENT
+   Premium Dark Theme - Classic Professional
+   ======================================== */
+
+.classes-list {
+  background: var(--bg-card);
+  border-radius: 20px;
+  border: 1px solid var(--border-subtle);
+  padding: 28px;
+  position: relative;
+  overflow: hidden;
+  transition: var(--transition-smooth);
+}
+
+.classes-list::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--accent-gold), transparent);
+  opacity: 0.3;
+}
+
+.classes-list:hover {
+  border-color: var(--border-active);
+  box-shadow: var(--shadow-card);
+}
+
+.classes-list h2 {
+  font-family: 'Playfair Display', serif;
+  color: var(--text-primary);
+  margin: 0 0 8px 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.classes-list h2::before {
+  content: '';
+  width: 4px;
+  height: 24px;
+  background: linear-gradient(180deg, var(--accent-gold), var(--accent-gold-dark));
+  border-radius: 2px;
+}
+
+.classes-subtitle {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  margin: 0 0 24px 0;
+  letter-spacing: 0.3px;
+}
+
+/* Classes Grid */
+.classes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+  gap: 12px;
+  margin-bottom: 28px;
+}
+
+.class-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 18px 12px;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+  transition: var(--transition-smooth);
+  cursor: default;
+  position: relative;
+  overflow: hidden;
+}
+
+.class-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.08), transparent);
+  opacity: 0;
+  transition: var(--transition-smooth);
+}
+
+.class-card:hover {
+  transform: translateY(-4px) scale(1.02);
+  border-color: var(--accent-gold);
+  box-shadow: 0 8px 24px rgba(212, 175, 55, 0.15);
+}
+
+.class-card:hover::before {
+  opacity: 1;
+}
+
+.class-emoji {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  display: block;
+  transition: var(--transition-bounce);
+  filter: grayscale(20%);
+}
+
+.class-card:hover .class-emoji {
+  transform: scale(1.15);
+  filter: grayscale(0%);
+}
+
+.class-name {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  text-align: center;
+  text-transform: capitalize;
+  word-break: break-word;
+  letter-spacing: 0.3px;
+}
+
+.no-classes {
+  grid-column: 1 / -1;
+  text-align: center;
+  color: var(--text-muted);
+  padding: 30px 20px;
+  font-style: italic;
+}
+
+/* Info Box */
+.info-box {
+  background: linear-gradient(135deg, rgba(68, 138, 255, 0.08), rgba(68, 138, 255, 0.02));
+  border-left: 3px solid var(--info);
+  padding: 20px;
+  border-radius: 0 12px 12px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.info-box::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, rgba(68, 138, 255, 0.03), transparent);
+  pointer-events: none;
+}
+
+.info-box h3 {
+  color: var(--info);
+  margin: 0 0 14px 0;
+  font-size: 0.95rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Inter', sans-serif;
+}
+
+.info-box ol {
+  color: var(--text-secondary);
+  margin: 0;
+  padding-left: 20px;
+  line-height: 1.7;
+  font-size: 0.85rem;
+}
+
+.info-box li {
+  margin-bottom: 8px;
+  position: relative;
+}
+
+.info-box li:last-child {
+  margin-bottom: 0;
+}
+
+.info-box li::marker {
+  color: var(--accent-gold);
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .classes-list {
+    padding: 20px;
+  }
+  
+  .classes-grid {
+    grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+    gap: 10px;
+  }
+
+  .class-card {
+    padding: 14px 10px;
+  }
+
+  .class-emoji {
+    font-size: 1.6rem;
+  }
+  
+  .class-name {
+    font-size: 0.7rem;
+  }
+}
+
