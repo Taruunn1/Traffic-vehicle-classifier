@@ -25,13 +25,21 @@ from backend.users_db import UsersDatabase
 from werkzeug.security import generate_password_hash, check_password_hash
 import re
 
-app = Flask(__name__)
+#app = Flask(__name__)
 
-@app.route('/')# 👈 ADD HERE
+#@app.route('/')# 👈 ADD HERE
+#CORS(app)
+#def home():
+    #return "Traffic Vehicle Classifier is Running 🚀"
+app = Flask(__name__,
+            template_folder='../frontend',
+            static_folder='../frontend')
+
 CORS(app)
-def home():
-    return "Traffic Vehicle Classifier is Running 🚀"
 
+@app.route('/')
+def home():
+    return render_template('index.html')
 
 # Configuration
 UPLOAD_FOLDER = 'uploads'
