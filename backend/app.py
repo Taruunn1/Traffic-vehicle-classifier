@@ -1,4 +1,5 @@
 from flask import Flask, request, jsonify, Response
+from flask import render_template
 from flask_cors import CORS
 import cv2
 import numpy as np
@@ -25,6 +26,10 @@ from werkzeug.security import generate_password_hash, check_password_hash
 import re
 
 app = Flask(__name__)
+
+@app.route('/')   # 👈 ADD HERE
+def home():
+    return "Traffic Vehicle Classifier is Running 🚀"
 CORS(app)
 
 # Configuration
