@@ -27,10 +27,11 @@ import re
 
 app = Flask(__name__)
 
-@app.route('/')   # 👈 ADD HERE
+@app.route('/')# 👈 ADD HERE
+CORS(app)
 def home():
     return "Traffic Vehicle Classifier is Running 🚀"
-CORS(app)
+
 
 # Configuration
 UPLOAD_FOLDER = 'uploads'
